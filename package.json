@@ -5,9 +5,12 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@atlaskit/page": "11.0.5",
+    "@atlaskit/page-header": "9.0.6",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "4.3.2"
   },
   "devDependencies": {
     "typescript": "3.3.3"
