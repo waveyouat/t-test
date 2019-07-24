@@ -52,8 +52,10 @@ class Team extends Component {
         })}
         <ModalTransition>
           {this.state.showProfileModal && (
-            <Modal heading="Modal Title" onClose={this.cardSelectionHandler}>
-              <div onClick={this.cardSelectionHandler}>Back</div>
+            <Modal
+              heading={this.state.profile.name + "'s Tasks "}
+              onClose={this.cardSelectionHandler}
+            >
               <Profile details={this.state.profile} />
             </Modal>
           )}
