@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Task from "../components/Task";
+import FieldText, { FieldTextStateless } from "@atlaskit/field-text";
+import Button from "@atlaskit/button";
 import PortfolioItem from "../components/PortfolioItem";
 import axios from "axios";
 
@@ -7,6 +9,7 @@ export default function Profile(props) {
   let [user, setUser] = useState({});
   let [posts, setPosts] = useState([]);
   let [todos, setTodos] = useState([]);
+  let [newTaskMessage, setNewTaskMessage] = useState([]);
   useEffect(() => {
     axios
       .get(
@@ -26,7 +29,11 @@ export default function Profile(props) {
   return (
     <div>
       <h4>Tasks</h4>
-      <div>Add new task</div>
+      <FieldText
+        label="Add new task"
+        onChange={() => setNewTaskMessage(this.value)}
+      />
+      <Button appearance="primary">Add</Button>
       {todos.map(task => (
         <Task key={task.id} title={task.title} completed={task.completed} />
       ))}
