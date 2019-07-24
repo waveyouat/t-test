@@ -19,8 +19,14 @@ class Team extends Component {
   }
   cardSelectionHandler = teammate => {
     console.log("Team cardSelectionHandler : ", teammate.id);
+    /*let show = this.state.showProfileModal;
+    if (teammate.id === this.state.profile.id || show) {
+      this.setState({ showProfileModal: !show });
+    } else {
+      this.setState({ showProfileModal: !show, profile: teammate });
+    }*/
     let show = this.state.showProfileModal;
-    !show
+    !show || teammate.id !== this.state.profile.id
       ? this.setState({ showProfileModal: !show, profile: teammate })
       : this.setState({ showProfileModal: !show });
   };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Task from "../components/Task";
-
+import PortfolioItem from "../components/PortfolioItem";
 import axios from "axios";
 
 export default function Profile(props) {
@@ -25,15 +25,20 @@ export default function Profile(props) {
   });
   return (
     <div>
+      <h4>Tasks</h4>
+      <div>Add new task</div>
       {todos.map(task => (
         <Task key={task.id} title={task.title} completed={task.completed} />
       ))}
-      <div>Calendar</div>
+      {/*<div>Calendar</div>
       <div>Progress</div>
-      <div>Previous Work</div>
+      <div>Previous Work, Posts</div>
+      {posts.map(post => (
+        <PortfolioItem key={post.id} title={post.title} />
+      ))}
       Profile {props.details.id}
       Posts {posts.length}
-      Todos {todos.length}
+      Todos {todos.length}*/}
     </div>
   );
 }
